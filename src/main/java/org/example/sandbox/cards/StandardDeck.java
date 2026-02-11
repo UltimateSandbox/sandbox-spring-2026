@@ -1,7 +1,30 @@
 package org.example.sandbox.cards;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StandardDeck implements Deck {
 
+    List<Card> cards;
+
+    public StandardDeck() {
+        this.cards = newDeck();
+    }
+
+    private List<Card> newDeck() {
+
+        List<Card> cards = new ArrayList<>();
+
+        Arrays.stream(Suit.values()).forEach(suit -> {
+            Arrays.stream(FaceValue.values()).map(faceValue -> new Card(suit, faceValue)).forEach(cards::add);
+        });
+        return cards;
+    }
+
+    public List<Card> getCards() {
+        return cards;
+    }
 
     @Override
     public void shuffle() {
