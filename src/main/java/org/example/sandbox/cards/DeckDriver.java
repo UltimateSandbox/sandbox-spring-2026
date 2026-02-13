@@ -6,6 +6,26 @@ public class DeckDriver {
 
         Deck cards = new StandardDeck();
         displayDeck(cards);
+
+        cards.shuffle();
+        displayDeck(cards);
+
+        cards.shuffle();
+        displayDeck(cards);
+
+        Card card = cards.deal();
+        System.out.print("\nTop card dealt: ");
+        System.out.println(card);
+        displayDeck(cards);
+
+        System.out.print("\nTop card displayed: ");
+        System.out.println(cards.turnOver());
+        displayDeck(cards);
+
+        cards.cut(cards.size() / 2);
+        System.out.print("\nCut deck: ");
+        displayDeck(cards);
+
     }
 
     private static void displayDeck(Deck cards) {
