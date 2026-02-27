@@ -18,7 +18,12 @@ public class CollectionsDemo {
 
         // Priority Queue
         Queue<String> queue = new PriorityQueue<>();
-        Collection<String> queue2 = new PriorityQueue<>();
+        Deque<String> queue2 = new LinkedList<>();
+
+        // Maps
+        Map<String, String> map = new HashMap<>();
+        Map<String, String> map2 = new LinkedHashMap<>();
+        Map<String, String> map3 = new TreeMap<>();
     }
 
 
