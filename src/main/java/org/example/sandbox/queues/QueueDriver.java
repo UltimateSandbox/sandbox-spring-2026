@@ -4,7 +4,7 @@ public class QueueDriver {
 
     public static void main(String[] args) {
 
-        Queue<String> queue = new ArrayListQueue<>();
+        Queue<String> queue = new LinkedListQueue<>();
 
         queue.offer("a");
         queue.offer("b");
