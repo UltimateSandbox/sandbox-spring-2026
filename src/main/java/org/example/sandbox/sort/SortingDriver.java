@@ -17,14 +17,27 @@ public class SortingDriver {
                 .limit(50000)
                 .toArray(Integer[]::new);
 
+        // Generate array of random Strings
+        /*String[] arr = IntStream.range(0, 50000)
+                .mapToObj(i -> {
+                    int length = 5 + (int) (Math.random() * 10);
+                    StringBuilder sb = new StringBuilder();
+                    for (int j = 0; j < length; j++) {
+                        char c = (char) ('a' + (int) (Math.random() * 26));
+                        sb.append(c);
+                    }
+                    return sb.toString();
+                })
+                .toArray(String[]::new);*/
+
         // List first 10 unsorted elements...
         printFirstTenOfArray(arr);
 
-        Integer[] copy1 = copyArray(arr);
-        Integer[] copy2 = copyArray(arr);
-        Integer[] copy3 = copyArray(arr);
-        Integer[] copy4 = copyArray(arr);
-        Integer[] copy5 = copyArray(arr);
+        Comparable[] copy1 = copyArray(arr);
+        Comparable[] copy2 = copyArray(arr);
+        Comparable[] copy3 = copyArray(arr);
+        Comparable[] copy4 = copyArray(arr);
+        Comparable[] copy5 = copyArray(arr);
 
         System.out.println("\nSelection Sort...");
         stopWatch.start("Selection Sort");
@@ -85,9 +98,9 @@ public class SortingDriver {
         }
     }
 
-    private static <T> T[] copyArray(T[] obj) {
+    private static <T extends Comparable<T>> T[] copyArray(T[] arr) {
 
-        T[] copy = (T[]) Arrays.copyOf(obj, obj.length);
+        T[] copy = (T[]) Arrays.copyOf(arr, arr.length);
 
         return copy;
     }
