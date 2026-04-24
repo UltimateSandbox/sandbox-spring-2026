@@ -11,14 +11,14 @@ public class SortingDriver {
         StopWatch stopWatch = new StopWatch("Sorting Algorithms Performance");
 
         // Generate array of random Integers
-        Integer[] arr = IntStream.generate(() -> (int) (Math.random() * 1000))
+        /*Integer[] arr = IntStream.generate(() -> (int) (Math.random() * 1000))
                 //.distinct()
                 .boxed()
                 .limit(50000)
-                .toArray(Integer[]::new);
+                .toArray(Integer[]::new);*/
 
         // Generate array of random Strings
-        /*String[] arr = IntStream.range(0, 50000)
+        String[] arr = IntStream.range(0, 50000)
                 .mapToObj(i -> {
                     int length = 5 + (int) (Math.random() * 10);
                     StringBuilder sb = new StringBuilder();
@@ -28,7 +28,7 @@ public class SortingDriver {
                     }
                     return sb.toString();
                 })
-                .toArray(String[]::new);*/
+                .toArray(String[]::new);
 
         // List first 10 unsorted elements...
         printFirstTenOfArray(arr);
